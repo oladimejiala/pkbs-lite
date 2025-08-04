@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Analysis Results</h1>
+        <h2>Detected Schistosoma Ova</h2>
+        <table>
+        <thead>
+            <tr>
+                <th>Species</th>
+                <th>Count</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Schistosoma haematobium</td>
+                <td>{{ results.schistosoma_haematobium }}</td>
+            </tr>
+            <tr>
+                <td>Schistosoma mansoni</td>
+                <td>{{ results.schistosoma_mansoni }}</td>
+            </tr>
+            <tr>
+                <td>Schistosoma intercalatum</td>
+                <td>{{ results.schistosoma_intercalatum }}</td>
+            </tr>
+            <tr>
+                <td>Schistosoma mekongi</td>
+                <td>{{ results.schistosoma_mekongi }}</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Total Ova Count</th>
+                <th>{{ results.total_ova }}</th>
+            </tr>
+        </tfoot>
+    </table>
+    <br>
+    <a href="/">Analyze another image</a>
+</body>
+</html>
