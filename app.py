@@ -28,6 +28,9 @@ def detect_ova(image_path):
 
 @app.route('/upload', methods=['POST'])
 def upload_file():
+    # Ensure the upload folder exists
+    os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
+
     if 'file' not in request.files:
         return redirect(request.url)
     file = request.files['file']
